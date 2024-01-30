@@ -10,11 +10,13 @@
 <body>
 
     <button onclick="start()">Change Color</button>
+    <br/><br/>
+    <img id="input" />
+    <br/>
     <img id="output" />
 
     <script>
         function changeImageColor(url, color) {
-            // const imageInput = document.getElementById('imageInput');
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext('2d');
 
@@ -23,7 +25,7 @@
             var g = parseInt(color.substring(3, 5), 16);
             var b = parseInt(color.substring(5, 7), 16);
 
-            const image = new Image();
+            const image = document.querySelector("#input");
             image.crossOrigin = "Anonymous";
 
             image.onload = function () {
@@ -59,7 +61,7 @@
         }
 
         function start() {
-            changeImageColor("https://thenounproject.com/api/private/icons/5736422/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0", "#891a01");
+            changeImageColor("test.png", "#04AA6D");
         }
     </script>
 
